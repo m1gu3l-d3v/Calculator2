@@ -9,5 +9,5 @@ package modelo.lineales;
  * @author HP
  */
 public class ColaPrioridad {
-    
+
 }

@@ -10,14 +10,12 @@ package estructuras;
  * @param <Tipo> cualquier tipo pues
  */
 public class PilaGenerica {
-    NodoGenerico Cima;
-    int tamaño;
-//Constructor
-    public PilaGenerica() {
-        this.Cima = null;
-        tamaño = 0;
-    }
-//
-    
-    
+  NodoGenerico Cima;
+  int tamaño;
+
+  // Constructor
+  public PilaGenerica() {
+    this.Cima = null;
+    tamaño = 0;
+  }
 }

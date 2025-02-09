@@ -10,12 +10,13 @@ package estructuras;
  * @param <Tipo> cualquier tipo pq me pidem parametrear esto ahhhhhhhhhhh
  */
 public class NodoGenerico<Tipo> {
-    Tipo dato; 
-    NodoGenerico siguiente;
-    NodoGenerico previo;
-    public NodoGenerico(Tipo dato) {
-        this.dato = dato;
-        this.siguiente=null;
-        this.previo=null;
-    }
+  Tipo dato;
+  NodoGenerico siguiente;
+  NodoGenerico previo;
+
+  public NodoGenerico(Tipo dato) {
+    this.dato = dato;
+    this.siguiente = null;
+    this.previo = null;
+  }
 }
