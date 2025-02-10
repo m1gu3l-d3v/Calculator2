@@ -8,8 +8,8 @@ package modelo.lineales;
  *
  * @author mike
  */
-public class Pila<T> {
-  private Nodo<T> cima;
+public class Pila<Tipo> {
+  private Nodo<Tipo> cima;
 
   /**
    * Constructor para inicializar una pila vacía.
@@ -23,8 +23,8 @@ public class Pila<T> {
    * 
    * @param dato El elemento a apilar.
    */
-  public void apilar(T dato) {
-    Nodo<T> nuevoNodo = new Nodo<>(dato);
+  public void apilar(Tipo dato) {
+    Nodo<Tipo> nuevoNodo = new Nodo<>(dato);
     nuevoNodo.siguiente = cima;
     cima = nuevoNodo;
   }
@@ -35,10 +35,10 @@ public class Pila<T> {
    * @return El elemento desapilado.
    * @throws IllegalStateException si la pila está vacía.
    */
-  public T despilar() {
+  public Tipo despilar() {
     if (cima == null)
       throw new IllegalStateException("¡Pila vacía!");
-    T dato = cima.dato;
+    Tipo dato = cima.dato;
     cima = cima.siguiente;
     return dato;
   }
@@ -49,7 +49,7 @@ public class Pila<T> {
    * @return El elemento en la cima de la pila.
    * @throws IllegalStateException si la pila está vacía.
    */
-  public T mirar() {
+  public Tipo mirar() {
     if (cima == null)
       throw new IllegalStateException("¡Pila vacía!");
     return cima.dato;

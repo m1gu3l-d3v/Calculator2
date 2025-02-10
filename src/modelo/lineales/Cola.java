@@ -8,10 +8,10 @@ package modelo.lineales;
  *
  * @author mike
  */
-public class Cola<T> {
+public class Cola<Tipo> {
   private int capacidad;
   private int tamanio;
-  private T[] cola;
+  private Tipo[] cola;
   private int frente;
   private int finalCola;
 
@@ -23,7 +23,7 @@ public class Cola<T> {
   @SuppressWarnings("unchecked") // Para evitar advertencias de la conversion potencialmente insegura
   public Cola(int capacidad) {
     this.capacidad = capacidad;
-    cola = (T[]) new Object[capacidad]; // Creación de un array genérico
+    cola = (Tipo[]) new Object[capacidad]; // Creación de un array genérico
     frente = 0;
     finalCola = -1;
     tamanio = 0;
@@ -35,7 +35,7 @@ public class Cola<T> {
    * @return el elemento del frente
    * @throws IllegalStateException si la cola está vacía
    */
-  public T peek() {
+  public Tipo peek() {
     if (this.isEmpty()) {
       throw new IllegalStateException("Cola vacía");
     }
@@ -48,11 +48,11 @@ public class Cola<T> {
    * @return el elemento eliminado
    * @throws IllegalStateException si la cola está vacía
    */
-  public T dequeue() {
+  public Tipo dequeue() {
     if (this.isEmpty()) {
       throw new IllegalStateException("Cola vacía");
     }
-    T elemento = cola[frente];
+    Tipo elemento = cola[frente];
     frente = (frente + 1) % capacidad; // Siguiente de último es el primero
     tamanio--;
     return elemento;
@@ -64,7 +64,7 @@ public class Cola<T> {
    * @param elemento el elemento a insertar
    * @throws IllegalStateException si la cola está llena
    */
-  public void enqueue(T elemento) {
+  public void enqueue(Tipo elemento) {
     if (this.isFull()) {
       throw new IllegalStateException("Cola llena");
     }

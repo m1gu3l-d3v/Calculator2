@@ -8,8 +8,8 @@ package modelo.lineales;
  * 
  * @author mike
  */
-public class ListaDobleCircular<T> {
-  private Nodo<T> cabeza, cola;
+public class ListaDobleCircular<Tipo> {
+  private Nodo<Tipo> cabeza, cola;
 
   /**
    * Constructor para inicializar la lista vacía.
@@ -24,8 +24,8 @@ public class ListaDobleCircular<T> {
    * 
    * @param dato Elemento a insertar.
    */
-  public void insertar(T dato) {
-    Nodo<T> nuevoNodo = new Nodo<>(dato);
+  public void insertar(Tipo dato) {
+    Nodo<Tipo> nuevoNodo = new Nodo<>(dato);
     if (cabeza == null) {
       // Si la lista está vacía, el nuevo nodo apunta a sí mismo
       cabeza = cola = nuevoNodo;
@@ -46,10 +46,10 @@ public class ListaDobleCircular<T> {
    * @param dato Elemento a buscar.
    * @return true si el elemento está en la lista, false si no.
    */
-  public boolean buscar(T dato) {
+  public boolean buscar(Tipo dato) {
     if (cabeza == null)
       return false;
-    Nodo<T> actual = cabeza;
+    Nodo<Tipo> actual = cabeza;
     do {
       if (actual.dato.equals(dato))
         return true;
@@ -63,13 +63,13 @@ public class ListaDobleCircular<T> {
    * 
    * @param dato Elemento a eliminar.
    */
-  public void eliminar(T dato) {
+  public void eliminar(Tipo dato) {
     if (cabeza == null) {
       System.out.println("Lista vacía, no se puede eliminar.");
       return;
     }
 
-    Nodo<T> actual = cabeza;
+    Nodo<Tipo> actual = cabeza;
     do {
       if (actual.dato.equals(dato)) {
         // Caso 1: Es el único nodo en la lista
@@ -109,7 +109,7 @@ public class ListaDobleCircular<T> {
       System.out.println("Lista vacía");
       return;
     }
-    Nodo<T> actual = cabeza;
+    Nodo<Tipo> actual = cabeza;
     do {
       System.out.print(actual.dato + " <-> ");
       actual = actual.siguiente;
