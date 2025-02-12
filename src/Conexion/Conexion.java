@@ -15,10 +15,10 @@ import java.sql.SQLException;
 public class Conexion {
 
     public static Connection getConection() {
-        final var NOMBRE = "";
+        final var NOMBRE = "nombreBaseDeDatos";
         final var URL = "jdbc:mysql://localhost/" + NOMBRE;
         final var USUARIO = "root";
-        final var CONTRASENIA = "";
+        final var CONTRASENIA = "*****";
         Connection cnx = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
