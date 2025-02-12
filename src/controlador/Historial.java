@@ -4,10 +4,7 @@
  */
 package controlador;
 
-/**
- *
- * @author ALE
- */
+
 public class Historial {
     
 }
